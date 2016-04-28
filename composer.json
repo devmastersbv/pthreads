@@ -1,0 +1,36 @@
+{
+    "name": "devmastersbv/pthreads",
+    "description": "Pthreads classes",
+    "keywords": ["autoloader", "pthreads", "composer"],
+    "type": "library",
+    "license": "BSD-3-Clause",
+    "support": {
+        "issues": "https://github.com/devmastersbv/yii2-rest/issues",
+        "source": "https://github.com/devmastersbv/yii2-rest"
+    },
+    "authors": [
+        {
+            "name": "Julian Rutten",
+            "email": "julian@devmasters.nl"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "ext-pthreads": ">=2.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "devmastersbv\\pthreads\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "devmastersbv\\pthreads\\tests\\": "tests/"
+        }
+    },
+    "extra": {
+    }
+}
