@@ -27,7 +27,7 @@ class Task extends \devmastersbv\pthreads\Task {
     }
 }
 
-$pool = new SafeLog;
+$pool = new \devmastersbv\pthreads\SafeLog;
 $pool = new \Pool(4, "devmastersbv\\pthreads\\Worker", [$this->logger, PTHREADS_INHERIT_NONE, "vendor/autoload.php"]);
 $data = new \devmastersbv\pthreads\Data;
 $pool->submit(new Task($data));
