@@ -24,6 +24,7 @@ class Task extends \devmastersbv\pthreads\Task {
 
         //Increment data by 1
         $this->data->storeCounter("total",1);
+        $this->setGarbage();
     }
 }
 
@@ -31,6 +32,11 @@ $pool = new \devmastersbv\pthreads\SafeLog;
 $pool = new \Pool(4, "devmastersbv\\pthreads\\Worker", [$this->logger, PTHREADS_INHERIT_NONE, "vendor/autoload.php"]);
 $data = new \devmastersbv\pthreads\Data;
 $pool->submit(new Task($data));
+while($pool->collect(function(\Collectable $task){
+    return $task->isGarbage();
+})){
+    continue;
+}
 $pool->shutdown();
 var_dump($data->total);
 //Will display int(4)

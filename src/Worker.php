@@ -9,6 +9,12 @@ class Worker extends \Worker
     private $loader;
     protected $logger;
 
+    /**
+     * Constructs the worker, sets the autoloader and inheritance
+     * @param \devmastersbv\pthreads\SafeLog $logger
+     * @param type $inheritance
+     * @param type $loader
+     */
     public function __construct(SafeLog $logger, $inheritance = PTHREADS_INHERIT_NONE, $loader = null)
     {
         $this->logger = $logger;
@@ -16,8 +22,9 @@ class Worker extends \Worker
         $this->loader = $loader;
     }
 
-    /* include autoloader for Tasks */
-
+    /**
+     * If set, require the autoloader
+     */
     public function run()
     {
         if ($this->loader) {
@@ -25,13 +32,20 @@ class Worker extends \Worker
         }
     }
 
-    /* override default inheritance behaviour for the new threaded context */
-
+    /**
+     * Start the worker
+     * @param type $options
+     * @return type
+     */
     public function start($options = null)
     {
         return parent::start($this->inheritance);
     }
 
+    /**
+     * Get the logger
+     * @return type
+     */
     public function getLogger()
     {
         return $this->logger;
