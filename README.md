@@ -6,7 +6,7 @@ Classes to make working with ```krakjoe/pthreads``` easier.
 Installation
 ------------
 ```
-"devmastersbv/pthreads": "*"
+"devmastersbv/pthreads": "~1.0"
 ```
 
 to the require section of your `composer.json` file.
