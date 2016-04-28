@@ -5,8 +5,8 @@
     "type": "library",
     "license": "BSD-3-Clause",
     "support": {
-        "issues": "https://github.com/devmastersbv/yii2-rest/issues",
-        "source": "https://github.com/devmastersbv/yii2-rest"
+        "issues": "https://github.com/devmastersbv/pthreads/issues",
+        "source": "https://github.com/devmastersbv/pthreads"
     },
     "authors": [
         {
