@@ -5,7 +5,6 @@ namespace devmastersbv\pthreads;
 abstract class Task extends \Collectable
 {
 
-    private $logger;
     private $data;
 
     /**

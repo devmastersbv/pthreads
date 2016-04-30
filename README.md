@@ -15,6 +15,8 @@ Usage
 ------------
 ```php
 class Task extends \devmastersbv\pthreads\Task {
+    private $logger;
+
     public function run(){
         $this->logger = $this->worker->getLogger();
         $this->logger->log("Message",["This will be var_dumped"]);
